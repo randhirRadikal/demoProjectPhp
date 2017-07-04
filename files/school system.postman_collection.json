@@ -1,0 +1,480 @@
+{
+	"id": "220385fd-2bde-a8e5-7aaf-cafcb21c5f52",
+	"name": "school system",
+	"description": "",
+	"order": [
+		"89de39ae-1461-8577-e000-1ea280921a01",
+		"3ba8c437-3eff-ae3e-e1e7-9a81a33298ab",
+		"eb413543-3358-20ea-8237-417e61222923",
+		"cae87abf-b825-8972-66fb-cdda14805f42",
+		"e10c2f70-a217-c735-88f5-16dd448bf21f",
+		"2fcd1d31-4514-d0c1-1087-a9f0a48fd4a8"
+	],
+	"folders": [],
+	"timestamp": 1499160574674,
+	"owner": "249206",
+	"public": false,
+	"requests": [
+		{
+			"id": "2fcd1d31-4514-d0c1-1087-a9f0a48fd4a8",
+			"headers": "Authorization: Basic cmFuZGhpckBpc2lzZHNuLm5ldDoxMjM0NTY=\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic cmFuZGhpckBpc2lzZHNuLm5ldDoxMjM0NTY=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/demoPhp/demoProjectPhp/Students/add.json",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "first_name",
+					"value": "Don",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "middel_name",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "last_name",
+					"value": "Kumar",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "father_name",
+					"value": "Don",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "mother_name",
+					"value": "Don",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "don@yopmail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "phone",
+					"value": "1234567890",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "class_id",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "gender",
+					"value": "M",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "123456",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "section_id",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "address1",
+					"value": "AA 21, Salt Lake,",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "address2",
+					"value": "Sector 1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "near_by",
+					"value": "PNB more",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "county_id",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "state_id",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "city_id",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "pincode",
+					"value": "457899",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1499172049403,
+			"name": "add student",
+			"description": "",
+			"collectionId": "220385fd-2bde-a8e5-7aaf-cafcb21c5f52",
+			"responses": []
+		},
+		{
+			"id": "3ba8c437-3eff-ae3e-e1e7-9a81a33298ab",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost/schoolSystem/Users/login.json",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "220385fd-2bde-a8e5-7aaf-cafcb21c5f52",
+			"data": [
+				{
+					"key": "email",
+					"value": "randhir@isisdsn.net",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "123456",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "user login",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1499160601074,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "89de39ae-1461-8577-e000-1ea280921a01",
+			"headers": "Authorization: Basic cmFuZGhpckBpc2lzZHNuLm5ldDoxMjM0NTY=\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic cmFuZGhpckBpc2lzZHNuLm5ldDoxMjM0NTY=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/demoPhp/demoProjectPhp/Fees/add.json",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "student_id",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "fee",
+					"value": "500",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "class_id",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "section_id",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "year",
+					"value": "2017",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "month",
+					"value": "3",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1499164077914,
+			"name": "user index",
+			"description": "",
+			"collectionId": "220385fd-2bde-a8e5-7aaf-cafcb21c5f52",
+			"responses": []
+		},
+		{
+			"id": "cae87abf-b825-8972-66fb-cdda14805f42",
+			"headers": "Authorization: Basic cmFuZGhpckBpc2lzZHNuLm5ldDoxMjM0NTY=\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic cmFuZGhpckBpc2lzZHNuLm5ldDoxMjM0NTY=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/demoPhp/demoProjectPhp/Fees/add.json",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "220385fd-2bde-a8e5-7aaf-cafcb21c5f52",
+			"data": [
+				{
+					"key": "student_id",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "fee",
+					"value": "25",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "class_id",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "section_id",
+					"value": "2",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "year",
+					"value": "2017",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "month",
+					"value": "5",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "add fee",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1499166066204,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "e10c2f70-a217-c735-88f5-16dd448bf21f",
+			"headers": "Authorization: Basic cmFuZGhpckBpc2lzZHNuLm5ldDoxMjM0NTY=\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic cmFuZGhpckBpc2lzZHNuLm5ldDoxMjM0NTY=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/demoPhp/demoProjectPhp/FeeStructures/edit.json",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "220385fd-2bde-a8e5-7aaf-cafcb21c5f52",
+			"data": [
+				{
+					"key": "student_id",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "fee",
+					"value": "25",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "class_id",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "section_id",
+					"value": "2",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "id",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "edit fee structure",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1499166102636,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "eb413543-3358-20ea-8237-417e61222923",
+			"headers": "Authorization: Basic cmFuZGhpckBpc2lzZHNuLm5ldDoxMjM0NTY=\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic cmFuZGhpckBpc2lzZHNuLm5ldDoxMjM0NTY=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/demoPhp/demoProjectPhp/FeeStructures/add.json",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "student_id",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "fee",
+					"value": "25",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "class_id",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "section_id",
+					"value": "2",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1499166154066,
+			"name": "add fee structure",
+			"description": "",
+			"collectionId": "220385fd-2bde-a8e5-7aaf-cafcb21c5f52",
+			"responses": []
+		}
+	]
+}

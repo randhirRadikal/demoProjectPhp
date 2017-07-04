@@ -11,7 +11,7 @@ use Cake\I18n\Time;
  *
  * @property \App\Model\Table\UsersTable $Users
  */
-class FeesController extends AppController
+class FeeStructuresController extends AppController
 {
     public function initialize() {
         parent::initialize();
@@ -31,27 +31,22 @@ class FeesController extends AppController
 			$required['fee'] = isset($data['fee'])?$data['fee']:'';
 			$required['class_id'] = isset($data['class_id'])?$data['class_id']:'';
 			$required['section_id'] = isset($data['section_id'])?$data['section_id']:'';
-			$required['year'] = isset($data['year'])?$data['year']:'';
-			$required['month'] = isset($data['month'])?$data['month']:'';
 			$blank_field = $this->__require_fields($required);
             if (count($blank_field)>0){
                 $error_code = 'ERROR';
                 $error_message = 'Please enter required field.';
             }else{
-				$fees = $this->Fees->newEntity();
-				$fees->school_id = $this->Auth->user('id');
-				$fees->student_id = $data['student_id'];
-				$fees->fee = $data['fee'];
-				$fees->class_id = $data['class_id'];
-				$fees->section_id = $data['section_id'];
-				$fees->year = $data['year'];
-				$fees->month = $data['month'];
-				$fees->created = Time::now();
-				$fees->created_by = $this->Auth->user('id');
-				$fees->modefied = Time::now();
-				if($this->Fees->save($fees)){
+				$feeStructure = $this->FeeStructures->newEntity();
+				$feeStructure->school_id = $this->Auth->user('id');
+				//$feeStructure->student_id = $data['student_id'];
+				$feeStructure->fee = $data['fee'];
+				$feeStructure->class_id = $data['class_id'];
+				$feeStructure->section_id = $data['section_id'];
+				$feeStructure->created = Time::now();
+				$feeStructure->created_by = $this->Auth->user('id');
+				if($this->FeeStructures->save($feeStructure)){
 					$error_code = 'SUCCESS';
-	                $error_message = 'Fee added successfully.';
+	                $error_message = 'Fee structure added successfully.';
 				}else{
 					$error_code = 'ERROR';
 	                $error_message = 'Some thing is worng, please try again later.';
@@ -74,26 +69,19 @@ class FeesController extends AppController
 			$required['fee'] = isset($data['fee'])?$data['fee']:'';
 			$required['class_id'] = isset($data['class_id'])?$data['class_id']:'';
 			$required['section_id'] = isset($data['section_id'])?$data['section_id']:'';
-			$required['year'] = isset($data['year'])?$data['year']:'';
-			$required['month'] = isset($data['month'])?$data['month']:'';
 			$blank_field = $this->__require_fields($required);
             if (count($blank_field)>0){
                 $error_code = 'ERROR';
                 $error_message = 'Please enter required field.';
             }else{
-				$fees = $this->Fees->get($data['id']);
-				if($fees){
-					$fees->student_id = $data['student_id'];
-					$fees->fee = $data['fee'];
-					$fees->class_id = $data['class_id'];
-					$fees->section_id = $data['section_id'];
-					$fees->year = $data['year'];
-					$fees->month = $data['month'];
-					$fees->modefied_by = $this->Auth->user('id');
-					$fees->modefied = Time::now();
-					if($this->Fees->save($fees)){
+				$feeStructure = $this->FeeStructures->get($data['id']);
+				if($feeStructure){
+					$feeStructure->fee = $data['fee'];
+					$feeStructure->class_id = $data['class_id'];
+					$feeStructure->section_id = $data['section_id'];
+					if($this->FeeStructures->save($feeStructure)){
 						$error_code = 'SUCCESS';
-		                $error_message = 'Fee update successfully.';
+		                $error_message = 'Fee structure update successfully.';
 					}else{
 						$error_code = 'ERROR';
 		                $error_message = 'Some thing is worng, please try again later.';
@@ -102,6 +90,7 @@ class FeesController extends AppController
 					$error_code = 'ERROR';
 					$error_message = 'Some thing is worng, please try again later.';
 				}
+
 			}
 		}
 		$this->set(["error_code"=>$error_code,
@@ -121,11 +110,11 @@ class FeesController extends AppController
                 $error_code = 'ERROR';
                 $error_message = 'Please enter required field.';
             }else{
-				$fees = $this->Fees->get($data['id']);
-				if($fees){
-					if($this->Fees->delete($fees)){
+				$feeStructure = $this->FeeStructures->get($data['id']);
+				if($feeStructure){
+					if($this->FeeStructures->delete($feeStructure)){
 						$error_code = 'SUCCESS';
-		                $error_message = 'Fee delete successfully.';
+		                $error_message = 'Fee structure delete successfully.';
 					}else{
 						$error_code = 'ERROR';
 		                $error_message = 'Some thing is worng, please try again later.';
@@ -134,6 +123,7 @@ class FeesController extends AppController
 					$error_code = 'ERROR';
 					$error_message = 'Some thing is worng, please try again later.';
 				}
+
 			}
 		}
 		$this->set(["error_code"=>$error_code,
