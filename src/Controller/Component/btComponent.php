@@ -4,7 +4,7 @@
  * Author: Ravi S. Singh
  * Date : 01-04-2016
  * Dependency : Braintree PHP API
- * 
+ *
  */
 
 namespace App\Controller\Component;
@@ -18,12 +18,7 @@ class btComponent extends Component {
      */
 
     public function __construct() {
-        \Braintree_Configuration::environment('sandbox');
-        \Braintree_Configuration::merchantId('tn2bj2fk86hrr6bm');
-        \Braintree_Configuration::publicKey('td2fwzmmk8ykq28r');
-        \Braintree_Configuration::privateKey('c361ffd0b6d4b8b608be6cef71cba3b5');
-
-        $this->masterMerchantID = "bidbroker_master";
+        
     }
 
     /*
@@ -47,7 +42,7 @@ class btComponent extends Component {
                         'submitForSettlement' => True
                     ]
         ]);
-        
+
         return $result;
     }
 
@@ -66,7 +61,7 @@ class btComponent extends Component {
         ]);
         return $result;
     }
-    
+
     /*
      * This function accepts the funnd in sub merchant account with service fees & hold in Escrow
      */
@@ -99,7 +94,7 @@ class btComponent extends Component {
         }
         return $res;
     }
-    
+
     /*
      * This function accepts transaction id and release the funds from escrow
      */
@@ -117,14 +112,14 @@ class btComponent extends Component {
                 }
                 return $res;
             }
-            
+
         }  catch (\Braintree\Exception\NotFound $e){
             $res['success']=FALSE;
             $res['error']="Invalid Transaction Id";
         }
         return $res;
     }
-    
+
     //function to void an unsattled transaction
     public function transactionVoid($transaction_id){
         $res=[];
@@ -145,7 +140,7 @@ class btComponent extends Component {
         }
         return $res;
     }
-    
+
     //function to refund a sattled transaction
     public function transactionRefund($transaction_id){
         $res=[];
@@ -166,7 +161,7 @@ class btComponent extends Component {
         }
         return $res;
     }
-    
+
     /*
      * Find a transaction status by Id
      */
@@ -185,7 +180,7 @@ class btComponent extends Component {
         }
         return $res;
     }
-    
+
     public function findMerchant($merchantAccountId){
         try{
             $result = \Braintree_MerchantAccount::find($merchantAccountId);
@@ -195,7 +190,7 @@ class btComponent extends Component {
             $res['data']['business']=$result->business;
             $res['data']['funding']=$result->funding;
             $res['success']=TRUE;
-            
+
         }  catch (\Braintree\Exception\NotFound $e){
             $res['success']=FALSE;
             $res['error']=$e->getMessage();
@@ -203,7 +198,7 @@ class btComponent extends Component {
         return $res;
     }
 
-    
+
     /*
      * This function accepts the valid Merchant Account Data and return $response['success'] true if successful
      * else return $response['success'] false
@@ -225,9 +220,9 @@ class btComponent extends Component {
         }
         return $response;
     }
-    
+
     /*Customer Related Functions */
-    
+
     public function createCustomer($data){
         $response = [];
         $result = \Braintree_Customer::create($data);
@@ -242,7 +237,7 @@ class btComponent extends Component {
         }
         return $response;
     }
-    
+
     public function findCustomer($customer_id){
         $res=[];
         try{
@@ -269,14 +264,14 @@ class btComponent extends Component {
                     $res['paymentMethods'][]=$pm_data;
                 }
             }
-            
+
         }catch(\Braintree\Exception\NotFound $e){
             $res['success']=FALSE;
             $res['error']=$e->getMessage();
         }
         return $res;
     }
-    
+
     public function addPaymentMethod($customer_id,$nonce){
         $response=[];
         $result = \Braintree_PaymentMethod::create([
@@ -294,7 +289,7 @@ class btComponent extends Component {
         //pr($result);exit();
         return $response;
     }
-    
+
     public function deletePaymentMethod($token){
         $res=[];
         try{
@@ -306,7 +301,7 @@ class btComponent extends Component {
                 $res['success']=FALSE;
                 $res['error']='PAYMENT_METHOD_DELETE_FAILED';
             }
-            
+
         }catch(\Braintree\Exception\NotFound $e){
             $res['success']=FALSE;
             $res['error']=$e->getMessage();

@@ -16,19 +16,9 @@ class S3Component extends Component {
         //if settings table has the access key and secret set to something create client
         //with those credentials. Else let the client use credentials from instance of server
         if(1){
-            $this->s3= S3Client::factory([
-                'region'            => 'us-west-2',
-                'version'           => '2006-03-01',
-                'credentials'=>[
-                    'key' => 'AKIAIMNJYAIWQND4YUPQ',
-                    'secret' => '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'
-                ]
-            ]);
+
         }else{
-            $this->s3= S3Client::factory([
-                'region'            => 'us-west-2',
-                'version'           => '2006-03-01'
-            ]);
+            
         }
         $this->bucket='itisforrenttest';
         $this->profilePicPath="profile";
