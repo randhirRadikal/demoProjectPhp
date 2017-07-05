@@ -27,15 +27,16 @@ class UsersController extends AppController
             $user = $this->Auth->identify();
             if(!$user){
               $this->set([
-                  'success'=>FALSE,
-                  'err'=>"Invalid username or password",
-                  '_serialize'=>['success','err']
+                  'error_code'=>"ERROR",
+                  'error_message'=>"Invalid username or password",
+                  '_serialize'=>['error_code','error_message']
               ]);
             }else{
               //if($user['status'] == 'Active'){
 			  if(1){
                   $this->set([
-                      'success'=>'login',
+                      'error_code'=>'SUCCESS',
+					  'error_message'=>'Login successfuly',
                       'data'=>[
                           'token'=>  JWT::encode([
                               'sub'=>$user['id'],
@@ -44,16 +45,17 @@ class UsersController extends AppController
                           'name'=>$user['name'],
                           'email'=>$user['email']
                       ],
-                      '_serialize'=>['success','data']
+                      '_serialize'=>['error_code','error_message','data']
                   ]);
               }else{
                   $this->set([
-                      'success'=>'not_verified',
+                      'error_code'=>'ERROR',
+					  'error_message'=>"Invalid username or password",
                       'data'=>[
                           'token'=>'',
                           'email'=>$user['email']
                       ],
-                      '_serialize'=>['success','data']
+                      '_serialize'=>['error_code','error_message','data']
                   ]);
               }
 
