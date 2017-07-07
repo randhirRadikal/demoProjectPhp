@@ -49,7 +49,7 @@ class FeeStructuresController extends AppController
 	                $error_message = 'Fee structure added successfully.';
 				}else{
 					$error_code = 'ERROR';
-	                $error_message = 'Some thing is worng, please try again later.';
+	                $error_message = 'Some problem in site, please reload the page.';
 				}
 			}
 		}
@@ -84,11 +84,11 @@ class FeeStructuresController extends AppController
 		                $error_message = 'Fee structure update successfully.';
 					}else{
 						$error_code = 'ERROR';
-		                $error_message = 'Some thing is worng, please try again later.';
+		                $error_message = 'Some problem in site, please reload the page.';
 					}
 				}else{
 					$error_code = 'ERROR';
-					$error_message = 'Some thing is worng, please try again later.';
+					$error_message = 'Some problem in site, please reload the page.';
 				}
 
 			}
@@ -117,11 +117,11 @@ class FeeStructuresController extends AppController
 		                $error_message = 'Fee structure delete successfully.';
 					}else{
 						$error_code = 'ERROR';
-		                $error_message = 'Some thing is worng, please try again later.';
+		                $error_message = 'Some problem in site, please reload the page.';
 					}
 				}else{
 					$error_code = 'ERROR';
-					$error_message = 'Some thing is worng, please try again later.';
+					$error_message = 'Some problem in site, please reload the page.';
 				}
 
 			}

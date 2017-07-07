@@ -52,10 +52,14 @@ class AppController extends Controller
 					'userModel' => 'Schools',
 					'fields' => ['username' => 'email', 'password' => 'password','is_active' => 1]
 				],
-				'Basic'=>[
-					'userModel' => 'Schools',
-					'fields' => ['username' => 'email', 'password' => 'password','is_active' => 1]
-				]
+				'ADmad/JwtAuth.Jwt' => [
+                    'parameter' => 'token',
+                    'userModel' => 'Users',
+                    'fields' => [
+                        'username' => 'id'
+                    ],
+                    'queryDatasource' => true
+                ]
 			],
 			'loginAction' => [
 				'controller' => 'Pages',
